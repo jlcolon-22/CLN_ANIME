@@ -35,7 +35,7 @@ const Recent = ({ recentList, clickTypeFunction, clickPageFunction }) => {
         </div>
         {/*    LIST OF RECENT ANIME*/}
         <div className="grid grid-cols-4 gap-x-4 gap-y-6 pt-10">
-          {recentList.results.map((value) => (
+          {recentList.results && recentList.results.map((value) => (
             <div key={value.id} className={"grid gap-y-2 "}>
               <div className="relative group">
                 <img
@@ -80,7 +80,7 @@ const TopAnime = ({topRating}) => {
       <section className={"min-w-[300px] max-w-[300px] h-fit "}>
         <h1 className="bg-violet-500 text-center text-white text-xl leading-loose font-semibold">Top Rating Anime</h1>
         <div className="border border-gray-500 py-3 px-2 grid gap-y-2">
-           {topRating.results.map((value,index)=> <a href={`/info/${value.id}`} key={index} className="text-violet-500 hover:text-white transition-colors ease-linear duration-200">{index + 1}. {value.title}</a>)}
+           {topRating.results && topRating.results.map((value,index)=> <a href={`/info/${value.id}`} key={index} className="text-violet-500 hover:text-white transition-colors ease-linear duration-200">{index + 1}. {value.title}</a>)}
         </div>
       </section>
     </>
